@@ -1,4 +1,5 @@
 import { GameCard } from "@/components/game-card";
+import { GameCardContainer } from "@/components/game-card-container";
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -7,8 +8,11 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
+import { getAllGames } from "@/lib/queries";
 
-export default function HomePage() {
+export default async function HomePage() {
+    const games = await getAllGames();
+
     return (
         <main className="space-y-10">
             <Card>
@@ -31,11 +35,8 @@ export default function HomePage() {
                         Play retro games online directly on the browser
                     </CardDescription>
                 </CardHeader>
-                <CardContent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                    <GameCard />
-                    <GameCard />
-                    <GameCard />
-                    <GameCard />
+                <CardContent>
+                    <GameCardContainer games={games} />
                 </CardContent>
             </Card>
         </main>
