@@ -1,4 +1,3 @@
-import { GameCard } from "@/components/game-card";
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -32,10 +31,10 @@ export default function HomePage() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                    <GameCard />
-                    <GameCard />
-                    <GameCard />
-                    <GameCard />
+                    <div className="aspect-square bg-secondary rounded-lg"></div>
+                    <div className="aspect-square bg-secondary rounded-lg"></div>
+                    <div className="aspect-square bg-secondary rounded-lg"></div>
+                    <div className="aspect-square bg-secondary rounded-lg"></div>
                 </CardContent>
             </Card>
         </main>
